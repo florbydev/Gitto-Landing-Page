@@ -28,22 +28,22 @@ function Navbar() {
   const mobileMenuClassNames: string = classNames(
     'hidden max-md:flex flex-col gap-6',
     'absolute left-0 right-0 top-full z-50',
-    'bg-white px-6 py-6 shadow-lg'
+    'bg-[#070707] px-6 py-6 shadow-lg'
   )
 
   const baseButtonClassNames: string = classNames(
-    'transition-colors cursor-pointer select-none text-xl font-semibold'
+    'transition-colors cursor-pointer select-none text-lg'
   )
 
   const getNavButtonClassNames = (buttonName: NavButtonName): string =>
     classNames(baseButtonClassNames, {
       'text-orange-500': activeButton === buttonName,
-      'text-[#0C0C0C] hover:text-orange-400': activeButton !== buttonName,
+      'text-[#c9c0b8] hover:text-orange-400': activeButton !== buttonName,
     })
 
   const getStartedButtonClassNames: string = classNames(
     baseButtonClassNames,
-    'px-5 py-3 rounded-2xl bg-orange-500 text-white hover:bg-orange-600'
+    'font-normal px-4 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl bg-orange-500 text-white hover:bg-orange-600'
   )
 
   const handleNavButtonClick = (buttonName: NavButtonName): void => {
@@ -94,14 +94,14 @@ function Navbar() {
             {isMobileMenuOpen ? (
               <path
                 d="M6 6L18 18M18 6L6 18"
-                stroke="currentColor"
+                stroke="#c9c0b8"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
             ) : (
               <path
                 d="M4 7H20M4 12H20M4 17H20"
-                stroke="currentColor"
+                stroke="#c9c0b8"
                 strokeWidth="2"
                 strokeLinecap="round"
               />
