@@ -15,6 +15,13 @@ const statusCopy: Partial<Record<SubmitStatus, string>> = {
   error: 'Something went wrong. Please try again.',
 }
 
+const developerAvatars = [
+  'https://i.pravatar.cc/80?img=12',
+  'https://i.pravatar.cc/80?img=32',
+  'https://i.pravatar.cc/80?img=47',
+  'https://i.pravatar.cc/80?img=56',
+]
+
 function HeroSignup({
   email,
   status,
@@ -56,22 +63,22 @@ function HeroSignup({
           <span>For Developers</span>
         </div>
 
-        <h1 className=" font-['Poppins'] text-[36px] font-semibold leading-[120%] tracking-tighter text-[#DED1C5] text-40px sm:text-[46px] lg:text-[56px]">
+        <h1 className="font-['Poppins'] text-[36px] font-semibold leading-[120%] tracking-tighter text-[#DED1C5] sm:text-[46px] lg:text-[56px]">
           See the progress behind your{' '}
           <span className="text-orange-500">code</span>.
         </h1>
 
-        <p className="mt-5 text-[15px] sm:text-[17px] font-regular leading-7 text-[#9d9690]">
+        <p className="mt-5 text-[15px] font-normal leading-7 text-[#9d9690] sm:text-[17px]">
           Gitto turns your Git activity into weekly progress, reflections, and
           encouragement from your developer circle.
         </p>
 
         <form
-          className="mt-18 inline-flex w-full items-center gap-2 rounded-[18px] border border-white/10 bg-white/6 p-2 shadow-[0_18px_50px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.04)]"
+          className="mt-16 inline-flex w-full flex-col gap-2 rounded-[18px] border border-white/10 bg-white/6 p-2 shadow-[0_18px_50px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.04)] sm:mt-18 sm:flex-row sm:items-center"
           onSubmit={onSubmit}
         >
           <input
-            className="min-w-0 flex-1 bg-transparent px-4 py-3 text-md font-medium text-[#f7f3ef] outline-none placeholder:text-[#a39b94]"
+            className="min-w-0 flex-1 bg-transparent px-2 py-3 text-md font-medium text-[#f7f3ef] outline-none placeholder:text-[#a39b94] sm:px-4 sm:py-3"
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -80,7 +87,7 @@ function HeroSignup({
 
           <button
             className={classNames(
-              'inline-flex cursor-pointer items-center justify-center rounded-xl bg-orange-500 px-4 py-3 text-md text-white font-light  hover:bg-orange-600',
+              'inline-flex cursor-pointer items-center justify-center rounded-xl bg-orange-500 px-4 py-3 text-md font-light text-white hover:bg-orange-600',
               { 'cursor-not-allowed opacity-70': isLoading }
             )}
             type="submit"
@@ -129,23 +136,6 @@ function HeroSignup({
           </p>
         )}
 
-        {/* <div className="mt-8 flex items-center justify-center gap-10">
-          {features.map((feature) => (
-            <div key={feature.title}>
-              <div className="mb-1.5 flex items-start gap-2 text-orange-500">
-                {feature.icon}
-                <h3 className="text-sm font-semibold text-[#DED1C5]">
-                  {feature.title}
-                </h3>
-              </div>
-
-              <p className="text-sm leading-5 text-[#8f8882]">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div> */}
-
         <div className="mt-6 ml-1">
           <p className="text-sm font-medium text-[#9d9690]">
             Trusted by developers building every day.
@@ -153,13 +143,15 @@ function HeroSignup({
 
           <div className="mt-3 flex items-center">
             <div className="flex -space-x-3">
-              {['A', 'M', 'J', 'R'].map((initial) => (
-                <div
-                  key={initial}
-                  className="grid h-8 w-8 place-items-center rounded-full border-2 border-[#050505] bg-[#d8c0ad] text-xs font-bold text-[#211a16]"
-                >
-                  {initial}
-                </div>
+              {developerAvatars.map((avatar, _index) => (
+                <img
+                  key={avatar}
+                  src={avatar}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-8 w-8 rounded-full border-2 border-[#050505] object-cover"
+                  loading="lazy"
+                />
               ))}
             </div>
 
