@@ -33,7 +33,7 @@ function HeroSignup({
   return (
     <section className="text-[#f7f3ef]">
       <div className="w-full">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-2 text-sm text-[#c9c0b8] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-2 text-sm text-orange-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
           <svg
             viewBox="0 0 24 24"
             className="h-4 w-4 text-orange-500"
@@ -63,7 +63,7 @@ function HeroSignup({
           <span>For Developers</span>
         </div>
 
-        <h1 className="font-['Poppins'] text-[36px] font-semibold leading-[120%] tracking-tighter text-[#DED1C5] sm:text-[46px] lg:text-[56px]">
+        <h1 className="text-[36px] font-semibold leading-[120%] tracking-tight text-[#DED1C5] sm:text-[46px] lg:text-[56px]">
           See the progress behind your{' '}
           <span className="text-orange-500">code</span>.
         </h1>
@@ -87,7 +87,7 @@ function HeroSignup({
 
           <button
             className={classNames(
-              'inline-flex cursor-pointer items-center justify-center rounded-xl bg-orange-500 px-4 py-3 text-md font-light text-white hover:bg-orange-600',
+              'inline-flex cursor-pointer items-center justify-center rounded-xl bg-orange-500 px-4 py-3 text-md text-white hover:bg-orange-600',
               { 'cursor-not-allowed opacity-70': isLoading }
             )}
             type="submit"
@@ -104,20 +104,9 @@ function HeroSignup({
             ) : (
               <span className="inline-flex items-center gap-3">
                 Join the wishlist
-                <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none">
-                  <path
-                    d="M4 10h9"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="m10 6 4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ded1c5" fill="none" stroke="#ded1c5" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M10.5 8C10.5 8 13.5 10.946 13.5 12C13.5 13.0541 10.5 16 10.5 16" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             )}

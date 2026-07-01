@@ -11,7 +11,7 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   const navClassNames: string = classNames(
-    'px-16 py-10 flex items-center justify-between',
+    'pl-8 pr-6 py-6 flex items-center justify-between',
     'max-md:px-6 max-md:py-6'
   )
 
@@ -32,7 +32,7 @@ function Navbar() {
   )
 
   const baseButtonClassNames: string = classNames(
-    'transition-colors cursor-pointer select-none text-lg'
+    'transition-colors cursor-pointer select-none text-md'
   )
 
   const getNavButtonClassNames = (buttonName: NavButtonName): string =>
@@ -43,7 +43,7 @@ function Navbar() {
 
   const getStartedButtonClassNames: string = classNames(
     baseButtonClassNames,
-    'font-normal px-4 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl bg-orange-500 text-white hover:bg-orange-600'
+    'font-medium px-4 py-2 sm:px-5 sm:py-2 rounded-xl sm:rounded-xl bg-orange-500 text-[#0a0a0a] hover:bg-orange-600'
   )
 
   const handleNavButtonClick = (buttonName: NavButtonName): void => {
@@ -56,9 +56,9 @@ function Navbar() {
   }
 
   return (
-    <nav className="relative">
+    <nav className="relative border-b border-white/5">
       <div className={navClassNames}>
-        <img src={logo} className='w-16 lg:w-24' alt="Gitto logo" />
+        <img src={logo} className='w-16 lg:w-16' alt="Gitto logo" />
         <div className={desktopLinksWrapperClassNames}>
           {navButtons.map((buttonName: NavButtonName) => (
             <button
